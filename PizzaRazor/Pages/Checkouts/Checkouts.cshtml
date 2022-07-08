@@ -1,0 +1,25 @@
+﻿@page
+@model PizzaRazor.Pages.Checkouts.CheckoutsModel
+
+
+@{
+
+}
+
+
+<h1> Review Order </h1> 
+@{
+    var imagePath = "~/images/" + ( @Model.PizzaImageTitle +".png");
+}
+<!-- bind property make this razor page knows what is pizzaname and pizzaprice -->
+<div class="align-content-center">
+    <div class="col-3 mx-auto">
+        <!-- imgfluid to make the image size be reasonable -->
+        <img src=@imagePath class="img-fluid" asp-append-version="true" />
+        <p> You ordered @Model.PizzaName is ready </p>
+        <p> The total price is : @Model.PizzaPrice </p>
+        <br />
+        <a class="btn btn-outline-primary" asp-area="" asp-page="/Checkouts/ThankYou" > Submit Order </a>
+    </div>
+    
+</div>

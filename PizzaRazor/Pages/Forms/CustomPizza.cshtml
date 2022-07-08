@@ -1,0 +1,36 @@
+﻿@page
+@model PizzaRazor.Pages.Forms.CustomPizzaModel
+@{
+}
+<div class="text-center container">
+    <h1> Customer Pizza Selections </h1>
+    <!-- no asp attributes in form tag, only method and action just like html -->
+    <form method="post">
+
+        <!-- mx-auto to make the whole thing to the center -->
+        <div class="form-group mx-auto mt-5 pt-2 mb-2 px-2 col-4">
+            <label class="ms-auto col-form-label"> Name for Pizza </label>
+            <input class="form-control" type="text" asp-for="MyPizza.PizzaName" />
+        </div>
+
+        <div class="mx-auto mt-2 pt-2 mb-2 px-2 col-4">
+            <input type="checkbox" placeholder="TomatoSauce" asp-for="MyPizza.TomatoSauce"/> 
+            <label class="ms-auto col-form-label"> TomatoSauce </label>
+            <br />
+            <input type="checkbox" placeholder="Cheese" asp-for="MyPizza.Cheese" />
+            <label class="ms-auto col-form-label"> Cheese </label>
+            <br />
+            <input type="checkbox" placeholder="Beef" asp-for="MyPizza.Beef" />
+            <label class="ms-auto col-form-label"> Beef </label>
+            <br />
+            <input type="checkbox" placeholder="Peperoni" asp-for="MyPizza.Peperoni" />
+            <label class="ms-auto col-form-label"> Peperoni </label>
+            <br />
+        </div>
+        
+        <button class="btn btn-outline-primary" type="submit"> Order My Pizza </button>
+    </form>
+
+
+    
+</div>
