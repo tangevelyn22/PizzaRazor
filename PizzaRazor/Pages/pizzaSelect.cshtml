@@ -23,21 +23,41 @@
             <div class="w-100 row">
 
             
-                <div class="col-4">
-                    <!-- this w100 is the key to make picture and word non overlapping ->
-                    <img src="~/images/makeown.png"class="w-100" />
+                <div class="col-4 img-fluid">
+                    <!-- this w100 is the key to make picture and word non overlapping -->
+                    <img src="~/images/makeown.png" class="w-100" />
                 </div>
 
                 <div class="col-8">
                     <!-- this w100 in the h3 tag wasnt take too much difference  -->
                     <h3 class="text-info w-100"> DIY pizza. Choose the ingredient you need</h3>
                     <p class="text-secondary"> multiple ingredients with desired flavors</p>
-                    <a class="btn btn-outline-primary h-25" asp-area="" asp-page="/Forms/CustomPizza"> Go get Pizza </a>
+                    <a class="btn btn-outline-primary h-25" asp-area="" asp-page="/Forms/CustomPizza">Get DIY Pizzas</a>
                 </div>
 
             </div>
         </div> 
     </div>
+
+    <div class="row">
+    @foreach (var pizza in @Model.fakePizzaDB)
+    {
+        var path = "~/images/" + (pizza.PizzaImageTitle) + ".png";
+
+        
+            <div class="col-4 mb-5 ">
+                <img src="@path" class="img-fluid img-thumbnail setsize" asp-append-version="true" /> 
+                <!-- added own css class -->
+                <a class="btn btn-outline-primary" asp-area="" asp-page="/Checkouts/Checkouts"> Get This Pizza!</a>
+                <br />
+            </div>
+       
+    }
+    </div>
+        
+
+
+
 </div>
 
 

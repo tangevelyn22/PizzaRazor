@@ -21,3 +21,8 @@ body {
     text-align:right;
     color:grey;
 }
+
+.setsize {
+    height:100%;
+    width:100%;
+}

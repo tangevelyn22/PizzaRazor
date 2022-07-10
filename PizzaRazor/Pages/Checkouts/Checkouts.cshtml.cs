@@ -27,7 +27,7 @@ namespace PizzaRazor.Pages.Checkouts
             
             if (string.IsNullOrWhiteSpace(PizzaImageTitle))
             {
-                PizzaImageTitle = "pizza6";
+                PizzaImageTitle = "makeown";
             }
             
         }
