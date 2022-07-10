@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaRazor.Models;
+using PizzaRazor.Data;
 
 namespace PizzaRazor.Pages.Checkouts
 {
@@ -16,6 +17,8 @@ namespace PizzaRazor.Pages.Checkouts
 
         [BindProperty(SupportsGet = true)]
         public float PizzaPrice { get; set; }
+
+
 
         public void OnGet()
         {

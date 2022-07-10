@@ -1,4 +1,19 @@
+using PizzaRazor.Data;
+using Microsoft.EntityFrameworkCore;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+/* my connection to the database, add service to container */
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
+    // builder.Configuration will lead you to the appsettings.json
+    // you set the connection string in the appsetting and key of the json is Default Connection
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
