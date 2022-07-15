@@ -19,6 +19,13 @@ namespace PizzaRazor.Pages.Checkouts
         public float PizzaPrice { get; set; }
 
 
+        // make a copy to access your database
+        private ApplicationDBContext _context;
+        // context is our database
+        public CheckoutsModel(ApplicationDBContext context)
+        {
+            _context = context;
+        }
 
         public void OnGet()
         {
@@ -32,7 +39,15 @@ namespace PizzaRazor.Pages.Checkouts
             {
                 PizzaImageTitle = "makeown";
             }
-            
+
+            // use the model created
+            PizzaOrder order = new PizzaOrder();
+            order.PizzaName = PizzaName;
+            order.BasePrice = PizzaPrice;
+
+            // add to db
+            _context.PizzaOrders.Add(order);
+            _context.SaveChanges();
         }
         
     }

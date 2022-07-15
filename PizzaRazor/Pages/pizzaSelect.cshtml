@@ -48,7 +48,11 @@
             <div class="col-4 mb-5 ">
                 <img src="@path" class="img-fluid img-thumbnail setsize" asp-append-version="true" /> 
                 <!-- added own css class -->
-                <a class="btn btn-outline-primary" asp-area="" asp-page="/Checkouts/Checkouts"> Get This Pizza!</a>
+                <a class="btn btn-outline-primary" asp-area="" asp-page="/Checkouts/Checkouts"
+                asp-route-PizzaImageTitle="@pizza.PizzaImageTitle"
+                asp-route-PizzaPrice="@pizza.FinalPrice"
+                asp-route-PizzaName="@pizza.PizzaName"
+                > Get This Pizza!</a>
                 <br />
             </div>
        
