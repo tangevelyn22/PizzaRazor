@@ -1,0 +1,47 @@
+﻿@page
+@model PizzaRazor.Pages.TableOrderModel
+@{
+}
+
+
+<h1> Orders in DB </h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    PizzaName
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+        </thead>
+        
+        <br />
+
+        <tbody>
+            @foreach (var order in @Model.orders)
+            {
+                <tr>
+                    <th>
+                        @order.Id
+                    </th>
+                    <th>
+                        @order.PizzaName
+                    </th>
+                    <th>
+                        @order.BasePrice
+                    </th>
+                </tr>
+            }
+        </tbody>
+
+        <!-- in order to click the image to redirect, simply put the image within the a tag -->
+
+    </table>
+</div>
